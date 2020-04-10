@@ -4,13 +4,31 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<script type="text/javascript">		 
+		  function validate(){
+			 var flag = true;
+			 var college = document.myForm.college.value;
+			 var studentName = document.myForm.studentName.value;
+			 
+			 if(college.length ==""){
+				 document.getElementById("message").innerHTML = "College Name is required";
+				 return false;
+			 }else if(studentName.length ==""){
+				 document.getElementById("message").innerHTML = "Student Name is required";
+				 return false;
+			 }
+			 return true;
+		 }	
+	</script>
 <body>
-<form action ="addStudentServlet" method ="post">
-College: <input type ="text" name ="college">
-StudentName: <input type ="text" name ="studentName">
-<input type ="submit" value="Add Student">
-</form>
-<br />
-<a href ="viewAllStudentsServlet">View the complete list</a>
+	<form name="myForm" action ="addStudentServlet" method ="post" onsubmit="return validate();">
+		College: <input type ="text" name ="college">
+		StudentName: <input type ="text" name ="studentName">
+		<input type ="submit" value="Add Student">
+	</form>
+	<br />
+	<div id="message"></div>
+	<br />
+	<a href ="viewAllStudentsServlet">View the complete list</a>	 
 </body>
 </html>

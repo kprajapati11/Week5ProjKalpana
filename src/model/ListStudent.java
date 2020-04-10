@@ -16,7 +16,7 @@ public class ListStudent {
 	@Column(name="ID")
 	private int id;
 
-	@Column(name="COLLEGE")
+	@Column(name="COLLEGE")	
 	private String college;
 
 	@Column(name="STUDENTNAME")
